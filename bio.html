@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXNoContact | Download on the App Store</title>
+    <meta
+      name="description"
+      content="Download EXNoContact on the App Store. Create distance, reduce impulsive contact, and hold your boundary with clarity."
+    />
+    <meta property="og:title" content="EXNoContact" />
+    <meta
+      property="og:description"
+      content="Download EXNoContact on the App Store."
+    />
+    <meta property="og:image" content="./app-icon.png" />
+    <link rel="stylesheet" href="./bio.css" />
+  </head>
+  <body>
+    <main class="landing-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <section class="hero-panel">
+        <p class="brand-kicker">EXNoContact</p>
+
+        <div class="icon-pulse-wrap" aria-hidden="true">
+          <div class="icon-pulse-ring ring-one"></div>
+          <div class="icon-pulse-ring ring-two"></div>
+          <img
+            class="app-icon"
+            src="./app-icon.png"
+            alt="EXNoContact app icon"
+          />
+        </div>
+
+        <h1>EXNoContact</h1>
+        <p class="hero-copy">
+          The no-contact app that helps you create distance, stop impulsive
+          check-ins, and protect your peace when emotions run high.
+        </p>
+
+        <section class="notice-card" id="browserNotice">
+          <div class="notice-badge" id="browserBadge">TikTok browser tip</div>
+          <p class="notice-title" id="browserTitle">Opening from TikTok?</p>
+          <p class="notice-copy" id="browserCopy">
+            If the App Store does not open smoothly inside TikTok, tap the
+            three dots in the top right and choose
+            <strong>"Open in browser"</strong> to continue.
+          </p>
+        </section>
+
+        <a
+          class="download-button"
+          href="https://apps.apple.com/app/ex-no-contact/id6761607996"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Download on the App Store</span>
+        </a>
+      </section>
+    </main>
+
+    <script>
+      const userAgent = navigator.userAgent || "";
+      const browserNotice = document.getElementById("browserNotice");
+      const browserBadge = document.getElementById("browserBadge");
+      const browserTitle = document.getElementById("browserTitle");
+      const browserCopy = document.getElementById("browserCopy");
+      const isTikTokBrowser =
+        /TikTok|musical_ly|BytedanceWebview|ByteLocale/i.test(userAgent);
+
+      if (isTikTokBrowser) {
+        browserNotice.classList.add("notice-card-active");
+        browserBadge.textContent = "TikTok browser detected";
+        browserTitle.textContent = "Having trouble opening the App Store?";
+        browserCopy.innerHTML =
+          'Tap the three dots in the top right and choose <strong>"Open in browser"</strong> to continue on the App Store.';
+      }
+    </script>
+  </body>
+</html>
